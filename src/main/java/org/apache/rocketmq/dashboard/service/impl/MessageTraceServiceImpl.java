@@ -81,6 +81,7 @@ public class MessageTraceServiceImpl implements MessageTraceService {
             }
             return messageTraceViews;
         } catch (Exception err) {
+            err.printStackTrace();
             throw new ServiceException(-1, String.format("Failed to query message trace by msgId %s", key));
         }
     }
