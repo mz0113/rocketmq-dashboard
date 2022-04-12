@@ -67,6 +67,7 @@ public class CollectTaskRunnble implements Runnable {
                         inTPS += bsd.getStatsMinute().getTps();
                         inMsgCntToday += StatsAllSubCommand.compute24HourSum(bsd);
                     } catch (Exception e) {
+                        e.printStackTrace();
                         log.warn("Exception caught: mqAdminExt get broker stats data TOPIC_PUT_NUMS failed", e.getMessage());
                     }
                 }
@@ -82,6 +83,7 @@ public class CollectTaskRunnble implements Runnable {
                                 outTPS += bsd.getStatsMinute().getTps();
                                 outMsgCntToday += StatsAllSubCommand.compute24HourSum(bsd);
                             } catch (Exception e) {
+                                e.printStackTrace();
                                 log.warn("Exception caught: mqAdminExt get broker stats data GROUP_GET_NUMS failed", e.getMessage());
                             }
                         }
